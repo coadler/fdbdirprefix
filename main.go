@@ -30,7 +30,17 @@ func main() {
 		os.Exit(1)
 	}
 
-	dir, err := directory.Open(db, []string{os.Args[1]}, nil)
+	var (
+		dir directory.DirectorySubspace
+		err error
+	)
+
+	if create {
+		dir, err = directory.CreateOrOpen(db, []string{os.Args[1]}, nil)
+	} else {
+		dir, err = directory.Open(db, []string{os.Args[1]}, nil)
+	}
+
 	if err != nil {
 		flog.Fatal("Failed to open directory: " + err.Error())
 	}
