@@ -25,6 +25,6 @@ gobin github.com/coadler/foundationdb
 
 ## Flags:
 
-`--apiVersion int` - What FDB API version to use
+`--apiVersion int` - What FDB API version to use. Default: 610
 
-`--create` - Whether or not to create the directory if it doesn't exist
+`--create` - Whether or not to create the directory if it doesn't exist. Default: false
